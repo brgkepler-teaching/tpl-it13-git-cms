@@ -15,7 +15,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
   <p><a href={`${base}/`}>← Alle Beiträge</a></p>
   <article>
     <h1>{beitrag.data.title}</h1>
-    <p class="meta">{beitrag.data.date.toLocaleDateString('de-AT')} • {beitrag.data.author} • {beitrag.data.kategorie}</p>
+    <p class="meta">{beitrag.data.date?.toLocaleDateString('de-AT') ?? '(kein Datum)'} • {beitrag.data.author} • {beitrag.data.kategorie}</p>
     <Content />
   </article>
 </Base>
