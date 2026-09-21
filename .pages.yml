@@ -1,0 +1,25 @@
+# Konfiguration für Pages CMS (https://app.pagescms.org):
+# Diese Datei beschreibt, welche Eingabemaske das Redaktionssystem für deine Markdown-Dateien anzeigt.
+media:
+  input: public/bilder
+  output: /bilder
+
+content:
+  - name: beitraege
+    label: Beiträge
+    type: collection
+    path: src/content/beitraege
+    fields:
+      - name: title
+        label: Titel
+        type: string
+        required: true
+      # 🎯 TODO (Aufgabe 13.3): Ergänze für JEDES Feld aus src/content.config.ts ein Formularfeld
+      #    (name muss gleich heißen!). Typen: string, text, date, select, number, boolean
+      #    Beispiel:
+      #      - name: date
+      #        label: Datum
+      #        type: date
+      - name: body
+        label: Inhalt
+        type: rich-text

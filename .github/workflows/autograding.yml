@@ -1,0 +1,23 @@
+name: Autograding
+# Läuft bei jedem Push. Grüner Haken = alle Tests bestanden, rotes X = noch etwas offen.
+on: [push, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - run: npm ci
+      - name: Inhalte prüfen
+        run: npm test
+      - name: Website bauen
+        run: npm run build
+      - name: Deployment-Check (erst ab Aufgabe 13.2 relevant)
+        run: npm run test:deploy
+        continue-on-error: true
+      - name: CMS-Konfiguration prüfen (erst ab Aufgabe 13.3 relevant)
+        run: npm run test:cms
+        continue-on-error: true

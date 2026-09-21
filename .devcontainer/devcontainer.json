@@ -1,0 +1,16 @@
+{
+  "name": "Git-CMS",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:22",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "astro-build.astro-vscode",
+        "github.vscode-github-actions"
+      ]
+    }
+  },
+  "postCreateCommand": "npm ci",
+  "forwardPorts": [
+    4321
+  ]
+}

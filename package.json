@@ -1,0 +1,17 @@
+{
+  "name": "kepler-git-cms",
+  "type": "module",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "test": "node --test tests/content.test.js",
+    "test:deploy": "node --test tests/deploy.test.js",
+    "test:cms": "node --test tests/cms.test.js"
+  },
+  "dependencies": {
+    "astro": "^5.0.0"
+  }
+}

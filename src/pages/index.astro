@@ -1,0 +1,22 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+// Alle Beiträge holen, neueste zuerst
+const beitraege = (await getCollection('beitraege')).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+);
+---
+<Base title="Mein Git-CMS">
+  <h1>Beiträge</h1>
+  <div class="grid">
+    {beitraege.map((b) => (
+      <article class="karte">
+        <h2><a href={`${base}/beitraege/${b.id}/`}>{b.data.title}</a></h2>
+        <p class="meta">{b.data.date.toLocaleDateString('de-AT')} • {b.data.author} • {b.data.kategorie}</p>
+        <p>{b.data.summary}</p>
+      </article>
+    ))}
+  </div>
+</Base>

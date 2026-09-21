@@ -1,0 +1,12 @@
+/* 🎨 CUSTOMIZATION POINT: Farben, Schrift, Layout – gib deinem Blog ein eigenes Gesicht! */
+:root { --primary: #005a9c; --bg: #f4f7fb; --karte: #ffffff; --text: #1e293b; }
+* { box-sizing: border-box; }
+body { margin: 0; font-family: "Segoe UI", sans-serif; background: var(--bg); color: var(--text); }
+.kopf { background: var(--primary); color: white; padding: 14px 24px; display: flex; gap: 16px; align-items: baseline; flex-wrap: wrap; }
+.kopf a { color: white; text-decoration: none; }
+main { max-width: 900px; margin: 24px auto; padding: 0 16px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
+.karte { background: var(--karte); border: 2px solid var(--primary); border-radius: 12px; padding: 14px 16px; }
+.karte h2 { margin-top: 0; font-size: 1.15rem; }
+.meta { color: #64748b; font-size: 0.85rem; }
+footer { text-align: center; color: #64748b; padding: 20px; }

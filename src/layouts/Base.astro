@@ -1,0 +1,24 @@
+---
+import '../styles/global.css';
+interface Props { title: string; }
+const { title } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <header class="kopf">
+      <a href={`${base}/`}><strong>📰 Mein Git-CMS</strong></a>
+      <span>Inhalte liegen als Markdown im Git-Repository</span>
+    </header>
+    <main>
+      <slot />
+    </main>
+    <footer>Gebaut mit Astro • BRG Kepler</footer>
+  </body>
+</html>
